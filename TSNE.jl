@@ -9,10 +9,6 @@ begin
     data = data .- mean(data, dims = 2)
 end
 
-x = tsne(data, 3, 0, 1000, 30)
-
-p = scatter(x[:,1],x[:,2],x[:,3], ms = 1, size=(1600,900))
-
 begin
     using MultivariateStats
     using Statistics
@@ -34,3 +30,6 @@ begin
     using DelimitedFiles
     using JLD2
 end
+
+x = tsne(data, 3, 0, 1000, 30)
+p = scatter(x[:,1],x[:,2],x[:,3], ms = 1, size=(1600,900))
